@@ -62,10 +62,7 @@ section {
 
   font-size: 3rem;
 }
-/* .main {
-  display: grid;
-  grid-template-rows: 350px 250px 350px 350px 300px 900px 400px;
-} */
+
 /*------home section------------------------- */
 .home {
   background-color: antiquewhite;
@@ -75,7 +72,7 @@ section {
 }
 .img {
   width: 200px;
-  height: 19rem;
+  height: 200px;
   border: solid 5px palevioletred;
   border-radius: 60%;
   margin: 10px;
