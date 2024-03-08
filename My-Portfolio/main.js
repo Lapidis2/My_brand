@@ -23,6 +23,6 @@ const navbar = document.querySelector('.navbar');
 togglebtn.onclick = () => {
     navbar.classList.toggle('active');
     document.getElementById('home').classList.toggle('home');
-    document.getElementById('home').style.marginTop = "70px"
+    document.getElementById('home').style.marginTop = "50px"
 }
 
