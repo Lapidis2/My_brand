@@ -4,13 +4,115 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
+/* Admin Panel start*/
+.container{
+    position: relative;
+    width: 100%;
+}
+.panel{
+    position: fixed;
+    width:200px ;
+    height: 100%;
+    background-color: white;
+    border-left:10px solid rgb(134, 134, 243);
+    overflow: hidden;
+    transition: 0.5s;
+}
+.panel ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.panel ul li{
+    position: relative;
+    list-style: none;
+    width: 100%;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+.panel ul li:hover,
+.panel ul li.hovered{
+    background-color: white;
+}
+.panel ul li:nth-child(1){
+    margin-bottom: 100px;
+    pointer-events: none;
+}
+.panel ul li a{
+    display: block;
+    display: flex;
+    width: 100%;
+    position: relative;
+    text-decoration: none;
+    color: rgb(8, 8, 8); 
+}
+.panel ul li:hover a,
+.panel ul li.hovered a{
+    color: blue;
+}
+.panel ul li a .iconpanel{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 75px;
+    text-align: center;
+    }
+.panel ul li a .iconpanel i {
+        font-size: 1.75rem;
+        }   
+.panel ul li a .title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+/* curve pointer
+.panel ul li:hover a::before,
+.panel ul li.hovered a::before{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50%;
+    background-color: transparent;
+    border: 50%;
+    box-shadow: 35px 35px 0 10px white ;
+    pointer-events:none;
+}
+.panel ul li:hover a::after,
+.panel ul li.hovered a::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50%;
+    background-color: transparent;
+    border: 50%;
+    box-shadow: 35px -35px 0 10px white ;
+    pointer-events:none;
+} */
+
+/* Admin Panel end*/
 main{
-    display: grid;
+    display: grid; 
     grid-template-rows:auto 550px 900px 550px auto;
 }
 .mylogo a{
     color: white;
     text-decoration: none;
+}
+span{
+    color: rgb(255, 0, 119)\;
+}
+#toggle1{
+    margin-right: 0;
 }
 .nav-bar{
     position: fixed;
@@ -60,6 +162,10 @@ list-style: none;
     
     text-transform: capitalize;
 }
+.home-text h4{
+    font-size: 18px;
+    margin-top: 8px;
+}
 .home-text p{
     text-align: center;
     margin-top: 50px;
@@ -72,6 +178,7 @@ list-style: none;
 .my-quote{
     text-align: center;
     margin-left: -90px;
+    font-size: 14px;
 }
 
 .about{
@@ -81,12 +188,13 @@ list-style: none;
     align-items: center;
     justify-content: space-around;
 }
-/* .about1{
-    border: 1PX SOLID black;
-} */
+
 #img1{
-    width: 100%;
-    height: 400px;
+    width: 40px;
+    height: 30px;
+    margin-top: 80px;
+    border-radius:300px;
+    border: solid black 1px;
 }
 .about h1{
     text-align: center;
@@ -96,6 +204,8 @@ list-style: none;
     margin-left: 20px;
     margin-top: 20px;
     width:400px;
+    font-size: 18px;
+    text-align: justify;
 }
 .about button{
     margin: 30px;
@@ -123,7 +233,7 @@ list-style: none;
     font-weight: bold;
     padding: 20px;
 }
-.service{
+/* .service{
     display: grid;
     grid-template-columns: auto auto auto auto;
     gap: 20px;
@@ -147,7 +257,7 @@ list-style: none;
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 20px;
-}
+} */
 
 #textarea{
     resize: none;
@@ -245,6 +355,7 @@ label::after{
     background-color: aqua;
 }
 .contact{
+    
     text-align: center;
     padding: 60px;
     background-color: #666552;
@@ -256,21 +367,232 @@ padding: 20px;
 border-radius: 50px;
 }
 .copyright{
-    position: sticky;
+    position: relative;
     position: -webkit-sticky;
     text-align: center;
-    background-color: rgb(147, 139, 129);
+    /* background-color: rgb(147, 139, 129); */
 }
-@media screen  and (max-width:768px){
+
+
+/* blogs */
+
+/* blogs start*/
+.blogs-header{
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  .blogs-header h1{
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 40px;
+  
+  }
+  .blog-content {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: auto auto auto;
+    justify-content: end;
+  }
+  .image-blog {
+  object-fit: cover;
+    display: block;
+  border: 2px solid gray;
+  padding: 16px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 2px 0 none;
+  background-color: #505555;
+  }
+  .image-blog  img{
+    height: 400px;
+    width: 100%;
+    object-fit: contain;
+  }
+  .image-blog  p{
+    width: 100%;
+    font-family: sans-serif;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+  }
+  .icons i{
+       margin-top: 25px;
+       padding: 3px;
+       color: white;
+       letter-spacing: 2px;
+       font-size:10px; 
+  }
+  .icons,.icon2 {
+    text-align: center;
+  }
+  
+  .icon2 i{
+    margin-top: 30px;
+    padding: 3px;
+  color: white;
+  letter-spacing: 2px;
+  font-size:10px;
+  }
+  .subscrib-btn{
+     padding: 20px 10px;
+    color: rgb(83, 7, 189);
+    border: solid rgb(255, 56, 212) 4px;
+    border-radius: 9rem;
+    background: pink;
+    font-weight: 900;
+    font-size: 20px;
+    transition: 0.5s ease;
+    letter-spacing: 1px;
+  cursor: pointer;
+  
+  }
+
+  /* signin /signup */
+/*  acount section*/
+.form {
+    padding-top: 20px;
+  }
+  .form-box {
+  
+    width: 800px;
+   height: 450px;
+    background-color: #e87a7a;
+    padding: 50px 30px 70px;
+    text-align: center;
+  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(50%,15%);
+  /* position: absolute; */
+  
+  }
+  
+  .form-box h1 {
+    font-size: 30px;
+    color: #3a8298;
+    position: relative;
+    margin-bottom: 60px;
+  }
+  .form-box h1::after {
+    content: "";
+    width: 40px;
+    height: 5px;
+    border-radius: 3px;
+    bottom: -12px;
+    left: 50%;
+    position: absolute;
+    background: #3f3c3c;
+    transform: translateX(-50%);
+  }
+  .input-field {
+    background-color: #e8dfdf;
+    display: flex;
+    margin: 15px 0;
+    border-radius: 3px;
+    align-items: center;
+    max-height: 65px;
+    transition: max-height 0.5s;
+    overflow: hidden;
+  }
+  input {
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 18px 15px;
+  }
+  .input-field i {
+    margin-left: 15px;
+    color: #211f1f;
+  }
+  form p {
+    text-align: left;
+    font-size: 13px;
+  }
+  form p a {
+    text-decoration: none;
+    color: #6bbbd8;
+  }
+  .btn-field {
+    width: 1005;
+    justify-content: space-between;
+    display: flex;
+  }
+  .btn-field button {
+    flex-basis: 48%;
+    color: #fff;
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    background: #3c00a0;
+    cursor: pointer;
+    transition: background 1s;
+  }
+  .input-group {
+    height: 250px;
+  }
+  .btn-field button.disable {
+    color: #555;
+    background: #eaeaea;
+    font-size: 18px;
+  }
+  
+  #resetbtn {
+    flex-basis: 48%;
+    margin-top: 3px;
+    color: #fff;
+    width: 50px;
+    height: 10px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    background: #3c00a0;
+    cursor: pointer;
+    transition: background 1s;
+  }
+  .contact-inform{
+    display: none;
+    background-color: white;
+    padding: 30px;
+    width: 800px;
+    margin: 20px 15%;
+    border-radius: 20px;  
+}
+  #copy {
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    background-color: black;
+    color: white;
+  }  
+  
+  /* responsivenesss */
+
+  @media screen  and (max-width:768px){
     main{
         display: block;
+        grid-template-rows:auto;
+
     }
     .nav-bar{
-        position: relative;
+        position: fixed;
+        width: 100%;
     }
     .home{
         display: block;
     }
+    .form-box {
+        align-items: center;
+        margin-bottom: 40px;
+        margin-top: 140px;
+        justify-content: center;
+        width: 100%;
+        background-color: #3f3c3c;
+      }
     .my-profile img{
    border-radius: 50%;
    margin-top: 40px;
@@ -321,6 +643,9 @@ border-radius: 50px;
 .services img:hover{
     transform: rotate(0deg);
 }
+.blog-content{
+    display: block;
+}
 
 #nav.activeMenu{
     display: block;
@@ -333,7 +658,7 @@ border-radius: 50px;
 #h{
     font-size: 30px;
 }
-.contact-inform{
+/* .contact-inform{
     display: none;
     background-color: white;
     padding: 30px;
@@ -341,81 +666,8 @@ border-radius: 50px;
     margin: 10px;
     border-radius: 20px; 
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
+} */
 .contact-inform h1{
     font-size: 20px;
 }
 }
-
-/* blogs */
-
-/* blogs start*/
-.blogs-header{
-    align-items: center;
-    text-align: center;
-    justify-content: space-around;
-    margin-bottom: 20px;
-  }
-  .blogs-header h1{
-    font-size: 40px;
-    font-weight: bold;
-    margin-top: 40px;
-  
-  }
-  .blog-content {
-    display: grid;
-  gap: 20px;
-    grid-template-columns: auto auto;
-  }
-  .image-blog {
-  object-fit: cover;
-    display: block;
-  border: 2px solid gray;
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 2px 2px 0 none;
-  background-color: #505555;
-  }
-  .image-blog  img{
-    height: 400px;
-    width: 100%;
-    object-fit: contain;
-  }
-  .image-blog  p{
-    width: 100%;
-    font-family: sans-serif;
-    font-size: 18px;
-    color: white;
-    text-align: center;
-  }
-  .icons i{
-       margin-top: 10px;
-       padding: 10px;
-       color: white;
-       letter-spacing: 2px;
-       font-size:20px ; 
-  }
-  .icons,.icon2 {
-    text-align: center;
-  }
-  
-  .icon2 i{
-    margin-top: 30px;
-    padding: 10px;
-  color: white;
-  letter-spacing: 2px;
-  font-size:20px ;
-  }
-  .subscrib-btn{
-     padding: 20px 10px;
-    color: rgb(197, 11, 11);
-    border: solid rgb(255, 56, 212) 4px;
-    border-radius: 9rem;
-    background: pink;
-    font-weight: 900;
-    font-size: 20px;
-    transition: 0.5s ease;
-    letter-spacing: 1px;
-  cursor: pointer;
-  
-  }
