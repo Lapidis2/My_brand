@@ -18,21 +18,21 @@
       <nav class="sidebar">
         <img src="./images/IMG-20240129-WA0000.jpg" id="my-profile" />
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#articles">article</a></li>
-          <li><a href="#skills">My Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#home"><i class="fa-solid fa-house"></i>Home</a></li>
+          <li><a href="#about"> <i class="fa-solid fa-address-card"></i>About</a></li>
+          <li><a href="#articles"> <i class="fa-solid fa-blog"></i>article</a></li>
+          <li><a href="#skills"> <i class="fa-solid fa-book"></i>My Skills</a></li>
+          <li><a href="#contact"><i class="fa-solid fa-address-book"></i>Contact</a></li>
         </ul>
       </nav>
       <main class="content">
         <!-- main-nav start -->
         <div class="nav-main">
-            <div id="toggle-btn">
-                <i class="fa-solid fa-bars"></i>
+            <div id="toggle-btn" class="toggle-btn">
+                <i class="fa-solid fa-bars" style="background-color: white;"></i>
             </div>
           <div class="nav-main-title">
-            <h1>MY_ <span style="color: rgb(225, 39, 117)">BRAND</span></h1>
+            <a href="#logo"></a><h1>MY_ <span style="color: rgb(225, 39, 117)">BRAND</span></h1></a>
           </div>
           <div class="search-container">
             <form action="#">
@@ -62,7 +62,7 @@
                 />
               </div>
               <div class="my-quote">
-                <q><i>To gather we can do something big</i></q>
+                <q><i>Veni Codi Vici👊</i></q>
               </div>
         </section>
         <!-- home-end -->
@@ -236,10 +236,10 @@
         <section id="contact">
                 <div class="contact">
                   <div class="form-box">
-                    <h1 id="title">sign up</h1>
+                    <h1 id="title">SIGN UP HERE👇</h1>
                     <form aria-disabled="false">
                       <div class="input-group">
-                        <div class="input-field" id="nameField">
+                        <div class="input-field" id="nameField"  >
                           <i class="fa-regular fa-user"></i>
                           <input
                             type="text"
@@ -247,7 +247,7 @@
                             style="font-size: 2rem"
                           />
                         </div>
-                        <div class="input-field">
+                        <div class="input-field"  >
                           <i class="fa-regular fa-envelope"></i>
                           <input
                             type="email"
@@ -255,12 +255,12 @@
                             style="font-size: 2rem"
                           />
                         </div>
-                        <div class="input-field">
-                          <i class="fa-solid fa-lock"></i>
+                        <div class="input-field" id="form-input">
+                          <i class="fa-solid fa-lock" ></i>
                           <input
                             type="password"
                             placeholder="Password"
-                            style="font-size: 1rem"
+                            style="font-size: 2rem"
                           />
                         </div>
                         <p id="pswd">
@@ -269,10 +269,10 @@
                       </div>
                       <div class="btn-field">
                         <button type="button" id="signupBtn" style="font-size: 18px;" >
-                          Sign up
+                          Sign Up here
                         </button>
                         <button type="button" class="disable" id="signinBtn" style="font-size: 18px;">
-                          Sign in
+                          Sign In Here
                         </button>
                       </div>
                     </form>
@@ -283,12 +283,24 @@
           
                 <div class="copyright">
                   <button class="subscribe-btn">Subscribe</button>
-                  <button class="home-btn">BACK TO HOME<i id="home-icon" class="fa-solid fa-arrow-up-short-wide"></i></button>
+                  <button class="home-btn" id="backToHomeBtn">BACK TO HOME<i id="logo" class="fa-solid fa-arrow-up-short-wide"></i></button>
                   <h1 class="foot-heading">LAPIDIS</h1>
                   <p class="copyright">Copyright &COPY; 2024 Lapidis</p>
                 </div>
         </section>
       </main>
     </div>
+    <script src="Main.js"></script>
+    <script>
+      const backToHomeBtn = document.getElementById('backToHomeBtn');
+
+backToHomeBtn.addEventListener('click', () => {
+    // Redirect to home page 
+    window.location.href = 'index.html'; 
+});
+
+    </script>
+
+  
   </body>
 </html>
