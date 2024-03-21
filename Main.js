@@ -1,29 +1,145 @@
-const toggleBtn=document.getElementById('toggle-btn');
-toggleBtn.onclick=()=>{
+const wrapper =document.querySelector('.wrapper');
+const loginLink =document.querySelector('.login-link');
+const registerLink =document.querySelector('.register-link');
+const navLinks = document.getElementById('nav-links');
+const close = document.getElementById('close');
+const toggleBtn = document.getElementById('toggle-btn');
+
+registerLink.addEventListener('click',(event)=>{
+    wrapper.classList.add('current');
+    event.preventDefault();
+})
+loginLink.addEventListener('click',(event)=>{
+    wrapper.classList.remove('current');
+    event.preventDefault();
+}) 
+const backToHomeBtn = document.getElementById('backToHomeBtn');
+
+backToHomeBtn.addEventListener('click', () => {
+    // Redirect to home page 
+    window.location.href = 'index.html'; 
+});
+
+/// toggle menu
+
+toggleBtn.onclick = () =>{
+
+    if (navLinks.style.display === 'block') {
+        navLinks.style.display = 'none';
+      } else {
+        navLinks.style.display = 'block';
+document.getElementById('navigation').style.display = 'block';
+      }
+}
+
+function toggleNavbar() {
+
     
-const menu=document.querySelector('.sidebar');
-if(menu.style.display==='none'||menu.style.display===''){
-    menu.style.display = "block";
-}
-else{
-    menu.style.display='none'
-}
-}
+    nav.classList.toggle('active');
+    menuIcon.style.display = menuIcon.style.display === 'none' ? 'inline-block' : 'none';
+    closeIcon.style.display = closeIcon.style.display === 'none' ? 'inline-block' : 'none';
+  }
 
-let signupBtn = document.getElementById('signupBtn');
-let signinBtn = document.getElementById('signinBtn');
-let title = document.getElementById('title');
-let nameField = document.getElementById('nameField');
 
-signinBtn.onclick =function(){
-   nameField.style.maxHeight = '0';
-   title.innerHTML = 'Sign in';
-   signupBtn.classList.add('disable');
-   signinBtn.classList.remove("disable");
-}
-signupBtn.onclick = function(){
-   nameField.style.maxHeight = '65px'
-   title.innerHTML = 'Sign up';
-   signupBtn.classList.remove('disable');
-   signinBtn.classList.add("disable");
+// ================form validation===================
+
+ 
+    // check validity by if condition
+    function formValid() {
+        var email_input = document.getElementById("email");
+        var password_input= document.getElementById("psswd");
+        var email_error = document.getElementById("emailerror");
+        var password_error = document.getElementById("psswd_error");
+        var email = email_input.value.trim();
+        var password = password_input.value.trim();
+        var email_pattern= /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        var password_Pattern  = /^(?=.\d)(?=.[a-z])(?=.[A-Z])(?=.[!@#$%^&*]).{7,}$/;
+    
+        // Reset error messages
+        email_error.textContent = "";
+        password_error.textContent = "";
+    
+        if (email === "") {
+            email_error.textContent = "Please, Email is required!";
+            email_input.focus();
+            return false;
+        } else if (!email_pattern.test(email)) {
+            email_error.textContent = "This Email format is Invalid. Please try again!";
+            email_input.focus();
+            return false;
+        }
+    
+        if (password === "") {
+            password_error.textContent = "Please, password is required!";
+            password_input.focus();
+            return false;
+        } else if (!password_Pattern .test(password)) {
+            password_error.textContent = "Password must be at least 7 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character";
+            password_input.focus();
+            return false;
+        }
+    
+        return true;
+    }
+    // =================registrationform===============
+    function formValidation() {
+        var email_input = document.getElementById("email1");
+        var password_input= document.getElementById("psswd1");
+        var email_error1 = document.getElementById("emailerror1");
+        var password_error1 = document.getElementById("psswd_error1");
+        var email = email_input.value.trim();
+        var password = password_input.value.trim();
+        var email_pattern= /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        var password_Pattern  = /^(?=.\d)(?=.[a-z])(?=.[A-Z])(?=.[!@#$%^&*]).{7,}$/;
+    
+        // Reset error messages
+        email_error1.textContent = "";
+        password_error1.textContent = "";
+    
+        if (email === "") {
+            email_error1.textContent = "Please, Email is required!";
+            email_input.focus();
+            return false;
+        } else if (!email_pattern.test(email)) {
+            email_error1.textContent = "This Email format is Invalid. Please try again!";
+            email_input.focus();
+            return false;
+        }
+    
+        if (password === "") {
+            password_error1.textContent = "Please, password is required!";
+            password_input.focus();
+            return false;
+        } else if (!password_Pattern .test(password)) {
+            password_error1.textContent = "Password must be at least 7 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character";
+            password_input.focus();
+            return false;
+        }
+    
+        return true;
+    }
+    // =============================local storage================================
+
+    function formValidation(){
+        let user_name,user_email,password;
+user_name=document.getElementById('user_name').value;
+user_email=document.getElementById('email1').value;
+password=document.getElementById('psswd1').value;
+    let user_values=new Array();
+    user_values=JSON.parse(localStorage.getItem("user_values"))||[];
+    if(user_values.some((v)=>{
+        return v.email==email
+    }))
+    {
+        alert("duplicate email")
+    }
+    else{
+        user_values.push({
+            "user_name":user_name,
+            "email1":user_email,
+            "psswd1":password,
+        })
+        localStorage.setItem("user_values",JSON.stringify(user_values));
+    }
+
 }

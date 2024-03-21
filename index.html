@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>My_portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -14,293 +14,391 @@
     />
   </head>
   <body>
-    <div class="container">
-      <nav class="sidebar">
-        <img src="./images/IMG-20240129-WA0000.jpg" id="my-profile" />
-        <ul>
-          <li><a href="#home"><i class="fa-solid fa-house"></i>Home</a></li>
-          <li><a href="#about"> <i class="fa-solid fa-address-card"></i>About</a></li>
-          <li><a href="#articles"> <i class="fa-solid fa-blog"></i>article</a></li>
-          <li><a href="#skills"> <i class="fa-solid fa-book"></i>My Skills</a></li>
-          <li><a href="#contact"><i class="fa-solid fa-address-book"></i>Contact</a></li>
-        </ul>
-      </nav>
-      <main class="content">
-        <!-- main-nav start -->
-        <div class="nav-main">
-            <div id="toggle-btn" class="toggle-btn">
-                <i class="fa-solid fa-bars" style="background-color: white;"></i>
-            </div>
-          <div class="nav-main-title">
-            <a href="#logo"></a><h1>MY_ <span style="color: rgb(225, 39, 117)">BRAND</span></h1></a>
-          </div>
-          <div class="search-container">
-            <form action="#">
-              <input type="text" placeholder="Search.." name="search" id="input-search" />
-              <button id="submit-btn" type="submit"><i class="fa fa-search"></i></button>
-            </form>
-          </div>
+ 
+    <!-- -------------Main start ------------------ -->
+    <div class="main-container">
+      <!-- ......sidestart.... -->
+      <div id="nav-links"  class="aside">   
+        <div id="navigation" class="nav-toggler">
+        <div class="logo">
+        <span id="close"><i class="fa-solid fa-circle-xmark"></i>
+        <a href="#"></span>My<span style="color: red">_Brand</span></a>
         </div>
-        <!-- main-nav end -->
+       
+        <ul class="nav" id="navbar">
+            <li>
+                <a href="#home" class="active"><i class="fa-solid fa-house"></i>Home</a>
+            </li>
+            <li>
+                <a href="#about"> <i class="fa-solid fa-address-card"></i>About</a>
+            </li>
+            <li>
+                <a href="#articles"> <i class="fa-solid fa-blog"></i>article</a>
+            </li>
+            <li>
+                <a href="#skills"> <i class="fa-solid fa-book"></i>Projects</a>
+            </li>
+            <li>
+                <a href="#contact"><i class="fa-solid fa-address-book"></i>Contact</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+    
+      <!-- ......side end.... -->
+      <!-- ............main content start............... -->
+      <div class="main-content">
+        <!-- ................home section start ..........-->
+        <section class="home section" id="home">
+          <div id="toggle-btn" class="nav-menu" onclick="toggleNavbar()">
+            <i class="fa-solid fa-bars"></i>
+            </div>
+          <div class="container">
 
-       <!-- home-nav start -->
-        <section id="home">
-            <div class="home-text">
-                <h1 style="font-size: 30px">
-                  Hi,I'm Jean <span style="color: rgb(237, 33, 115)">Pierre.</span>
-                </h1>
-                <h4>I'm a Software Developer</h4>
-                <h4>&Web designer from Rwanda</h4>
+            <div class="row">
+            
+              <div class="home-info padd-15">
+                <h3 class="hello">
+                  Hi,I'm Jean <span class="name">Pierre.</span>
+                </h3>
+                <h3 class="my-profession">
+                  I'm a
+                  <span class="typing">Software Developer & Web designer.</span>
+                </h3>
+                <p>
+                  I'm a web designer from Rwanda since 2 years ago. I have
+                  different skills so i can provide good looking website with
+                  clean codes. Also i can give you graphic designs and many
+                  different designs.
+                </p>
+                <a href="#contact" class="btn hire-me">Hire Me.</a>
               </div>
-      
-              <div class="my-profile">
-                <img
-                  src="./images/IMG-20240129-WA0000.jpg"
-                  alt="My profile"
-                  width="300"
-                  height="350"
-                />
+              <div class="home-img padd-15">
+                <img src="./images/IMG-20240129-WA0000.jpg" alt="My-Pic" />
               </div>
-              <div class="my-quote">
-                <q><i>Veni Codi Vici👊</i></q>
-              </div>
+            </div>
+          </div>
         </section>
-        <!-- home-end -->
-        <!-- about-start -->
-        <section id="about">
-            <div class="about1">
-                <h2 class="heading">About <span>Me</span></h2>
-                <div class="about-txt">
-                  <h3 style="font-size: 28px; ">Frontend Developer</h3>
-                  <p class="para-blogs">
-                    Hi, I'm Jean Pierre HITAYEZU. I'm from Kigali in Rwanda. <br />
-                    I'am a software developer. I feel lucky when am designing as well
-                    as writing codes! <br />
-                    I also like music. I'm a quick learner and also very passionate
-                    about my work. My tools that i use during my designs are Figma and
-                    Photoshop .I'm keen to learn new things and progress in my career.
-                  </p>
+        <!-- ................home section end  ..........-->
+        <!-- ................About section start ..........-->
+        <section id="about" class="about section">
+          <div class="container">
+            <div class="row">
+              <div class="section-title padd-15">
+                <h2>About Me</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="about-content padd-15">
+                <div class="row">
+                  <div class="about-text padd-15">
+                    <h3>FrontEnd <span>developer</span></h3>
+                    <p>
+                      Hi, I'm Jean Pierre HITAYEZU. I'm from Kigali in Rwanda.
+                      I'am a software developer. I feel lucky when am designing
+                      as well as writing codes! I also like music. I'm a quick
+                      learner and also very passionate about my work. My tools
+                      that i use during my designs are Figma and Photoshop .I'm
+                      keen to learn new things and progress in my career.
+                    </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="personal-info padd-15">
+                    <div class="row">
+                      <div class="info-item padd-15">
+                        <p>+250785934003</p>
+                      </div>
+                      <div class="info-item padd-15">
+                        <p>Email:hitapeter2@gmail.com</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="buttons">
+                        <a href="#" class="btn padd-15">Download CV</a>
+                        <a href="#contact" class="btn padd-15">Hire Me.</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="skills padd-15">
+                    <div class="row">
+                      <div class="skill-item padd-15">
+                        <h5>HTML</h5>
+                        <div class="progress">
+                          <div class="progress-in" style="width: 90%"></div>
+                          <div class="skill-percent">90%</div>
+                        </div>
+                      </div>
+                      <div class="skill-item padd-15">
+                        <h5>CSS</h5>
+                        <div class="progress">
+                          <div class="progress-in" style="width: 80%"></div>
+                          <div class="skill-percent">80%</div>
+                        </div>
+                      </div>
+                      <div class="skill-item padd-15">
+                        <h5>JS</h5>
+                        <div class="progress">
+                          <div class="progress-in" style="width: 60%"></div>
+                          <div class="skill-percent">60%</div>
+                        </div>
+                      </div>
+                      <div class="skill-item padd-15">
+                        <h5>REACT</h5>
+                        <div class="progress">
+                          <div class="progress-in" style="width: 50%"></div>
+                          <div class="skill-percent">50%</div>
+                        </div>
+                      </div>
+                      <div class="skill-item padd-15">
+                        <h5>PYTHON</h5>
+                        <div class="progress">
+                          <div class="progress-in" style="width: 65%"></div>
+                          <div class="skill-percent">65%</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
+            </div>
+          </div>
         </section>
-        <!-- articles-start -->
-        <section id="articles">
-            <div class="blogs-header">
-                <h1 class="heading">ARTICLES</h1>
+        <!-- ................about section end  ..........-->
+        <!-- ................BLOGS section start ..........-->
+        <section id="articles" class="service section">
+          <div class="container">
+            <div class="row">
+              <div class="section-title padd-15">
+                <h2>ARTICLES</h2>
               </div>
-              <div class="blog-content">
-                <div class="image-blog">
-                  <img src="./images/myblog.webp" alt="blog-image" />
-      
+            </div>
+            <div class="row_blogs">
+              <!-- ......service item start..... -->
+              <div class="service-item">
+                <div class="service-item-inner">
+                  <img src="./images/blog2.jpg" alt="" />
                   <p class="para-blogs">
-                    As a software engineer, I think logically, breaking down problems
-                    into <br />smaller, manageable tasks, and using programming
-                    languages and tools to solve them efficiently. <br />I also
-                    consider factors like scalability, performance, and
-                    maintainability when designing solutions.
+                    As a software engineer, I think logically, breaking down
+                    problems into <br />smaller, manageable tasks, and using
+                    programming languages and tools to solve them efficiently.
+                    <br />I also consider factors like scalability, performance,
+                    and maintainability when designing solutions.
                   </p>
                   <div class="icons">
                     <i class="fa-solid fa-thumbs-up"> 403</i>
                     <i class="fa-solid fa-thumbs-down">3</i>
                     <i class="fa-regular fa-comment">223</i>
                     <i class="fa-solid fa-trash-can"></i>
-                    <i class="fa-solid fa-pen"></i>
-                  </div>
-                </div>
-                <div class="image-blog">
-                  <img src="./images/blog2.jpg" alt="blog-image" />
-      
-                  <p class="para-blogs">
-                    As a software engineer, I think logically, breaking down problems
-                    into <br />smaller, manageable tasks, and using programming
-                    languages and tools to solve them efficiently. <br />I also
-                    consider factors like scalability, performance, and
-                    maintainability when designing solutions.
-                  </p>
-                  <div class="icons">
-                    <i class="fa-solid fa-thumbs-up"> 270</i>
-                    <i class="fa-solid fa-thumbs-down">1</i>
-                    <i class="fa-regular fa-comment">55</i>
-                    <i class="fa-solid fa-trash-can"></i>
-                    <i class="fa-solid fa-pen"></i>
-                  </div>
-                </div>
-                <div class="image-blog">
-                  <img src="./images/blog3.jpg" alt="blog-image" />
-      
-                  <p class="para-blogs">
-                    As a software engineer, I think logically, breaking down problems
-                    into <br />smaller, manageable tasks, and using programming
-                    languages and tools to solve them efficiently. <br />I also
-                    consider factors like scalability, performance, and
-                    maintainability when designing solutions.
-                  </p>
-                  <div class="icons">
-                    <i class="fa-solid fa-thumbs-up"> 306</i>
-                    <i class="fa-solid fa-thumbs-down">0</i>
-                    <i class="fa-regular fa-comment">250</i>
-                    <i class="fa-solid fa-trash-can"></i>
-                    <i class="fa-solid fa-pen"></i>
-                  </div>
-                </div>
-                <div class="image-blog">
-                  <img src="./images/blog3.jpg" alt="blog-image" />
-      
-                  <p class="para-blogs">
-                    As a software engineer, I think logically, breaking down problems
-                    into <br />smaller, manageable tasks, and using programming
-                    languages and tools to solve them efficiently. <br />I also
-                    consider factors like scalability, performance, and
-                    maintainability when designing solutions.
-                  </p>
-                  <div class="icons">
-                    <i class="fa-solid fa-thumbs-up"> 306</i>
-                    <i class="fa-solid fa-thumbs-down">0</i>
-                    <i class="fa-regular fa-comment">250</i>
-                    <i class="fa-solid fa-trash-can"></i>
-                    <i class="fa-solid fa-pen"></i>
-                  </div>
-                </div>
-                <div class="image-blog">
-                  <img src="./images/blog3.jpg" alt="blog-image" />
-      
-                  <p class="para-blogs">
-                    As a software engineer, I think logically, breaking down problems
-                    into <br />smaller, manageable tasks, and using programming
-                    languages and tools to solve them efficiently. <br />I also
-                    consider factors like scalability, performance, and
-                    maintainability when designing solutions.
-                  </p>
-                  <div class="icons">
-                    <i class="fa-solid fa-thumbs-up"> 306</i>
-                    <i class="fa-solid fa-thumbs-down">0</i>
-                    <i class="fa-regular fa-comment">250</i>
-                    <i class="fa-solid fa-trash-can"></i>
-                    <i class="fa-solid fa-pen"></i>
-                  </div>
-                </div>
-      
-                <div class="image-blog">
-                  <img src="./images/blog4.jpg" alt="blog-image" />
-                  <p class="para-blogs">
-                    As a software engineer, I think logically, breaking down problems
-                    into smaller, manageable tasks, and using programming languages
-                    and tools to solve them efficiently.I also consider factors like
-                    scalability, performance, and maintainability when
-                    designing solutions.
-                  </p>
-                  <div class="icon2">
-                    <i class="fa-solid fa-thumbs-up"> 233</i>
-                    <i class="fa-solid fa-thumbs-down">1</i>
-                    <i class="fa-regular fa-comment">63</i>
-                    <i class="fa-solid fa-trash-can"></i>
-                    <i class="fa-solid fa-pen"></i>
                   </div>
                 </div>
               </div>
-        </section>
-          <!---skills  section design-->
-
-      <section id="skills" class="skill-content">
-        <div class="heading">
-          <h2>My Skills</h2>
-        </div>
-        <div class="skills">
-          <div class="skill">
-            <div class="skillname">HTML</div>
-            <div class="skill-line">
-              <div class="skill-perc" per="90%" style="max-width: 90%"></div>
-            </div>
-          </div>
-          <div class="skill">
-            <div class="skillname">CSS</div>
-            <div class="skill-line">
-              <div class="skill-perc" per="80%" style="max-width: 80%"></div>
-            </div>
-          </div>
-          <div class="skill">
-            <div class="skillname">JavaScript</div>
-            <div class="skill-line">
-              <div class="skill-perc" per="70%" style="max-width: 70%"></div>
-            </div>
-          </div>
-          <div class="skill">
-            <div class="skillname">REACT</div>
-            <div class="skill-line">
-              <div class="skill-perc" per="60%" style="max-width: 60%"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-        <!-- contact-start -->
-        <section id="contact">
-                <div class="contact">
-                  <div class="form-box">
-                    <h1 id="title">SIGN UP HERE👇</h1>
-                    <form aria-disabled="false">
-                      <div class="input-group">
-                        <div class="input-field" id="nameField"  >
-                          <i class="fa-regular fa-user"></i>
-                          <input
-                            type="text"
-                            placeholder="Names"
-                            style="font-size: 2rem"
-                          />
-                        </div>
-                        <div class="input-field"  >
-                          <i class="fa-regular fa-envelope"></i>
-                          <input
-                            type="email"
-                            placeholder="Email"
-                            style="font-size: 2rem"
-                          />
-                        </div>
-                        <div class="input-field" id="form-input">
-                          <i class="fa-solid fa-lock" ></i>
-                          <input
-                            type="password"
-                            placeholder="Password"
-                            style="font-size: 2rem"
-                          />
-                        </div>
-                        <p id="pswd">
-                          Forgot Password? <a href="#" style="color: blue">reset </a>
-                        </p>
-                      </div>
-                      <div class="btn-field">
-                        <button type="button" id="signupBtn" style="font-size: 18px;" >
-                          Sign Up here
-                        </button>
-                        <button type="button" class="disable" id="signinBtn" style="font-size: 18px;">
-                          Sign In Here
-                        </button>
-                      </div>
-                    </form>
-                     
+              <div class="service-item">
+                <div class="service-item-inner">
+                  <img src="./images/blog2.jpg" alt="" />
+                  <p class="para-blogs">
+                    As a software engineer, I think logically, breaking down
+                    problems into <br />smaller, manageable tasks, and using
+                    programming languages and tools to solve them efficiently.
+                    <br />I also consider factors like scalability, performance,
+                    and maintainability when designing solutions.
+                  </p>
+                  <div class="icons">
+                    <i class="fa-solid fa-thumbs-up"> 403</i>
+                    <i class="fa-solid fa-thumbs-down">3</i>
+                    <i class="fa-regular fa-comment">223</i>
+                    <i class="fa-solid fa-trash-can"></i>
                   </div>
-                    
                 </div>
-          
-                <div class="copyright">
-                  <button class="subscribe-btn">Subscribe</button>
-                  <button class="home-btn" id="backToHomeBtn">BACK TO HOME<i id="logo" class="fa-solid fa-arrow-up-short-wide"></i></button>
-                  <h1 class="foot-heading">LAPIDIS</h1>
-                  <p class="copyright">Copyright &COPY; 2024 Lapidis</p>
+              </div>
+              <div class="service-item">
+                <div class="service-item-inner">
+                  <img src="./images/blog2.jpg" alt="" />
+                  <p class="para-blogs">
+                    As a software engineer, I think logically, breaking down
+                    problems into <br />smaller, manageable tasks, and using
+                    programming languages and tools to solve them efficiently.
+                    <br />I also consider factors like scalability, performance,
+                    and maintainability when designing solutions.
+                  </p>
+                  <div class="icons">
+                    <i class="fa-solid fa-thumbs-up"> 403</i>
+                    <i class="fa-solid fa-thumbs-down">3</i>
+                    <i class="fa-regular fa-comment">223</i>
+                    <i class="fa-solid fa-trash-can"></i>
+                  </div>
                 </div>
+              </div>
+              <div class="service-item">
+                <div class="service-item-inner">
+                  <img src="./images/blog2.jpg" alt="" />
+                  <p class="para-blogs">
+                    As a software engineer, I think logically, breaking down
+                    problems into <br />smaller, manageable tasks, and using
+                    programming languages and tools to solve them efficiently.
+                    <br />I also consider factors like scalability, performance,
+                    and maintainability when designing solutions.
+                  </p>
+                  <div class="icons">
+                    <i class="fa-solid fa-thumbs-up"> 403</i>
+                    <i class="fa-solid fa-thumbs-down">3</i>
+                    <i class="fa-regular fa-comment">223</i>
+                    <i class="fa-solid fa-trash-can"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="service-item">
+                <div class="service-item-inner">
+                  <img src="./images/blog2.jpg" alt="" />
+                  <p class="para-blogs">
+                    As a software engineer, I think logically, breaking down
+                    problems into <br />smaller, manageable tasks, and using
+                    programming languages and tools to solve them efficiently.
+                    <br />I also consider factors like scalability, performance,
+                    and maintainability when designing solutions.
+                  </p>
+                  <div class="icons">
+                    <i class="fa-solid fa-thumbs-up"> 403</i>
+                    <i class="fa-solid fa-thumbs-down">3</i>
+                    <i class="fa-regular fa-comment">223</i>
+                    <i class="fa-solid fa-trash-can"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="service-item">
+                <div class="service-item-inner">
+                  <img src="./images/blog2.jpg" alt="" />
+                  <p class="para-blogs">
+                    As a software engineer, I think logically, breaking down
+                    problems into <br />smaller, manageable tasks, and using
+                    programming languages and tools to solve them efficiently.
+                    <br />I also consider factors like scalability, performance,
+                    and maintainability when designing solutions.
+                  </p>
+                  <div class="icons">
+                    <i class="fa-solid fa-thumbs-up"> 403</i>
+                    <i class="fa-solid fa-thumbs-down">3</i>
+                    <i class="fa-regular fa-comment">223</i>
+                    <i class="fa-solid fa-trash-can"></i>
+                  </div>
+                </div>
+              </div>
+              <!-- ......service item start..... -->
+            </div>
+          </div>
         </section>
-      </main>
+        <!-- ................BLOGS section end  ..........-->
+
+        <!-- ................contact section end  ..........-->
+        <section id="contact" class="contact section">
+          <div class="container">
+            <div class="row">
+              <div class="section-title padd-15">
+                <h2>Contact Me Via</h2>
+              </div>
+            </div>
+            <h3 class="contact-title">Do You Want To Aproach Me?</h3>
+            <h4 class="contact-sub-title">Let me provide you my full info.</h4>
+            <div class="row">
+              <!-- ==========contactinfo start======== -->
+              <div class="contact-info-item padd-15">
+                <div class="icons"><i class="fa fa-phone"></i></div>
+                <h4>You Can Call</h4>
+                <p>+250785934003</p>
+              </div>
+              <div class="contact-info-item">
+                <div class="icons"><i class="fa fa-envelope"></i></div>
+                <h4>You Can Email</h4>
+                <p>hitapeter2@gmail.com</p>
+              </div>
+
+              <!-- ==========contactinfo end======== -->
+            </div>
+          </div>
+            <!-- ---------------------------login form start------------ -->
+
+             <div class="form-container">
+
+                  <h2>Login</h2>
+                  <form action="#">
+
+                    <div class="login-box">
+
+                    <div class="input-field-login">
+
+                    <div class="input-box">
+                      <span class="icon-icon"
+                        ><i class="fa-regular fa-envelope"></i
+                      ></span>
+                      <input type="email" id="email" placeholder="Enter Email" required  />
+                      <div class="emailerror" id="emailerror"></div>
+                    </div>
+
+                    <div class="input-box">
+                      <span class="icon-icon"
+                        ><i class="fa-solid fa-lock"></i
+                      ></span>
+                      <input type="password" id="psswd" placeholder="Enter Password" required />
+                      <div class="passworderror" id="psswd_error"></div>
+                    </div>
+                    <div class="remember-forget">
+                     <input type="checkbox" />Remember Me
+                      <a href="#" id="forget-password">Forget password?</a>
+                    </div>
+                  </div>
+                  <div class="login-button">
+                    <button
+                      onclick="return formValid()"
+                      type="submit"
+                      value="submit"
+                      class="btn3"
+                      id="submit"
+                    >
+                      Login
+                    </button>
+                  </div>
+                      <p>
+                        Don't have an account?
+                        <a href="#" class="register-link">Register here</a>
+                      </p>
+                    </div>
+                  </form>
+                </div>
+              
+            <!-- --------------------------------loginform end------------------ -->
+        </section>
+       <!-- ========================= Account section======================= -->
+       <section>
+       </section>
+        <footer>
+          <div class="copyright">
+            <div class="media">
+              <i class="fa-brands fa-github"></i>
+              <i class="fa-brands fa-linkedin"></i>
+            </div>
+            <button class="subscribe-btn">Subscribe</button>
+            <button class="home-btn" id="backToHomeBtn">
+              BACK TO HOME<i
+                id="logo"
+                class="fa-solid fa-arrow-up-short-wide"
+              ></i>
+            </button>
+            <h1 class="foot-heading">LAPIDIS</h1>
+            <p class="copyright">Copyright &COPY; 2024 Lapidis</p>
+          </div>
+        </footer>
+        <!-- ................contact section start  ..........-->
+      </div>
+      <!-- ............main content end............... -->
     </div>
-    <script src="Main.js"></script>
+    <!-- -------------Main end ------------------ -->
+    <!-- -------------- js file............. -->
+
+    <script src="main.js"></script>
     <script>
-      const backToHomeBtn = document.getElementById('backToHomeBtn');
-
-backToHomeBtn.addEventListener('click', () => {
-    // Redirect to home page 
-    window.location.href = 'index.html'; 
-});
-
-    </script>
-
-  
+    
+      </script>
+      
   </body>
 </html>

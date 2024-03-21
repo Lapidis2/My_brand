@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="form-box-Register">
+        <h2>Registration</h2>
+        <form action="#">
+          <div class="input-box">
+            <span class="icon-icon"
+              ><i class="fa-solid fa-user"></i
+            ></span>
+            <input type="text"  id="user_name" placeholder="name" required />
+          
+          </div>
+          <div class="input-box">
+            <span class="icon-icon"
+              ><i class="fa-regular fa-envelope"></i
+            ></span>
+            <input type="email" id="email1" placeholder="email" required />
+            
+            <div class="emailerror1" id="emailerror1"></div>
+          </div>
+          <div class="input-box">
+            <span class="icon-icon"
+              ><i class="fa-solid fa-lock"></i
+            ></span>
+            <input type="password" id="psswd1" placeholder="password " required />
+            
+            <div class="passworderror1" id="psswd_error1"></div>
+          </div>
+          <div class="remember-forget">
+            <input type="checkbox" class="check" /><label id="check"
+            >I agree to the terms &
+              conditions</label
+            >
+          </div>
+          <button
+            type="submit"
+            class="btn3 "
+            onclick=" return formValidation()"
+          >
+            Register
+          </button>
+          <div class="login-register">
+            <p>
+              I just have an account
+              <a href="#" class="login-link">Login</a>
+            </p>
+          </div>
+        </form>
+      </div>
+</body>
+</html>
