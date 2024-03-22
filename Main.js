@@ -1,19 +1,15 @@
 const wrapper =document.querySelector('.wrapper');
-const loginLink =document.querySelector('.login-link');
+// const loginLink =document.querySelector('.login-link');
 const registerLink =document.querySelector('.register-link');
 const navLinks = document.getElementById('nav-links');
 const close = document.getElementById('close');
 const toggleBtn = document.getElementById('toggle-btn');
+const backToHomeBtn = document.getElementById('backToHomeBtn');
 
 registerLink.addEventListener('click',(event)=>{
     wrapper.classList.add('current');
     event.preventDefault();
-})
-loginLink.addEventListener('click',(event)=>{
-    wrapper.classList.remove('current');
-    event.preventDefault();
-}) 
-const backToHomeBtn = document.getElementById('backToHomeBtn');
+});
 
 backToHomeBtn.addEventListener('click', () => {
     // Redirect to home page 
@@ -22,23 +18,29 @@ backToHomeBtn.addEventListener('click', () => {
 
 /// toggle menu
 
-toggleBtn.onclick = () =>{
+// toggleBtn.onclick = () =>{
 
+
+//       }
+// }
+document.getElementById('close').addEventListener('click',function(){
+    navLinks.style.display = 'none';
+})
+toggleBtn.onclick = ()=>{
+    navLinks.classList.toggle('active');
     if (navLinks.style.display === 'block') {
         navLinks.style.display = 'none';
       } else {
         navLinks.style.display = 'block';
-document.getElementById('navigation').style.display = 'block';
-      }
-}
+}}
 
-function toggleNavbar() {
+// function toggleNavbar() {
 
     
-    nav.classList.toggle('active');
-    menuIcon.style.display = menuIcon.style.display === 'none' ? 'inline-block' : 'none';
-    closeIcon.style.display = closeIcon.style.display === 'none' ? 'inline-block' : 'none';
-  }
+//     nav.classList.toggle('active');
+//     menuIcon.style.display = menuIcon.style.display === 'none' ? 'inline-block' : 'none';
+//     closeIcon.style.display = closeIcon.style.display === 'none' ? 'inline-block' : 'none';
+//   }
 
 
 // ================form validation===================
@@ -82,11 +84,13 @@ function toggleNavbar() {
         return true;
     }
     // =================registrationform===============
-    function formValidation() {
-        var email_input = document.getElementById("email1");
-        var password_input= document.getElementById("psswd1");
-        var email_error1 = document.getElementById("emailerror1");
-        var password_error1 = document.getElementById("psswd_error1");
+    function formValidation(e) {
+        e.preventDefault();
+        let name = document.getElementById("userNameField");
+        var email_input = document.getElementById("email");
+        var password_input= document.getElementById("psswd");
+        var email_error1 = document.getElementById("emailerror");
+        let psswd_error = document.getElementById("psswd_error");
         var email = email_input.value.trim();
         var password = password_input.value.trim();
         var email_pattern= /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -94,7 +98,7 @@ function toggleNavbar() {
     
         // Reset error messages
         email_error1.textContent = "";
-        password_error1.textContent = "";
+        psswd_error.textContent = "";
     
         if (email === "") {
             email_error1.textContent = "Please, Email is required!";
@@ -107,11 +111,11 @@ function toggleNavbar() {
         }
     
         if (password === "") {
-            password_error1.textContent = "Please, password is required!";
+            psswd_error.textContent = "Please, password is required!";
             password_input.focus();
             return false;
         } else if (!password_Pattern .test(password)) {
-            password_error1.textContent = "Password must be at least 7 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character";
+            psswd_error.textContent = "Password must be at least 7 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character";
             password_input.focus();
             return false;
         }
@@ -142,4 +146,4 @@ password=document.getElementById('psswd1').value;
         localStorage.setItem("user_values",JSON.stringify(user_values));
     }
 
-}
+    }

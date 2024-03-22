@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+   <meta content-type = 'portfolio website'> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My_portfolio</title>
     <link rel="stylesheet" href="styles.css" />
@@ -17,15 +18,15 @@
  
     <!-- -------------Main start ------------------ -->
     <div class="main-container">
+
       <!-- ......sidestart.... -->
       <div id="nav-links"  class="aside">   
-        <div id="navigation" class="nav-toggler">
         <div class="logo">
         <span id="close"><i class="fa-solid fa-circle-xmark"></i>
-        <a href="#"></span>My<span style="color: red">_Brand</span></a>
+        </span>My<span style="color: red">_Brand</span>
         </div>
-       
-        <ul class="nav" id="navbar">
+       <div id="navbar">
+        <ul class="nav" >
             <li>
                 <a href="#home" class="active"><i class="fa-solid fa-house"></i>Home</a>
             </li>
@@ -43,6 +44,7 @@
             </li>
         </ul>
       </div>
+      
     </div>
     
       <!-- ......side end.... -->
@@ -50,7 +52,7 @@
       <div class="main-content">
         <!-- ................home section start ..........-->
         <section class="home section" id="home">
-          <div id="toggle-btn" class="nav-menu" onclick="toggleNavbar()">
+          <div id="toggle-btn">
             <i class="fa-solid fa-bars"></i>
             </div>
           <div class="container">
@@ -116,7 +118,7 @@
                     <div class="row">
                       <div class="buttons">
                         <a href="#" class="btn padd-15">Download CV</a>
-                        <a href="#contact" class="btn padd-15">Hire Me.</a>
+                       
                       </div>
                     </div>
                   </div>
@@ -318,33 +320,38 @@
           </div>
             <!-- ---------------------------login form start------------ -->
 
-             <div class="form-container">
+             <div id="wrapper" class="form-container">
 
-                  <h2>Login</h2>
-                  <form action="#">
+                  <h2 id="title">Login</h2>
+                  <form action="">
 
                     <div class="login-box">
 
                     <div class="input-field-login">
-
+                      <div class="input-box" id="userNameField">
+                        <span class="icon-icon"
+                          ><i class="fa-regular fa-user"></i
+                        ></span>
+                        <input type="text" id="user_name" placeholder="Enter UserName" name="userName" autocomplete="true" />
+                      </div>
                     <div class="input-box">
                       <span class="icon-icon"
                         ><i class="fa-regular fa-envelope"></i
                       ></span>
-                      <input type="email" id="email" placeholder="Enter Email" required  />
+                      <input type="email" id="email" placeholder="Enter Email"  name="email"required autocomplete="true"  />
                       <div class="emailerror" id="emailerror"></div>
                     </div>
-
+                   
                     <div class="input-box">
                       <span class="icon-icon"
                         ><i class="fa-solid fa-lock"></i
                       ></span>
-                      <input type="password" id="psswd" placeholder="Enter Password" required />
+                      <input type="password" id="psswd" placeholder="Enter Password" name="psswd" required autocomplete="true" />
                       <div class="passworderror" id="psswd_error"></div>
                     </div>
                     <div class="remember-forget">
-                     <input type="checkbox" />Remember Me
-                      <a href="#" id="forget-password">Forget password?</a>
+                     <input type="checkbox" id="checkbox" /> <label for="checkbox">Remember Me</label> 
+                      <a href="#" id="forget-password" >Forget password?</a>
                     </div>
                   </div>
                   <div class="login-button">
@@ -353,12 +360,21 @@
                       type="submit"
                       value="submit"
                       class="btn3"
-                      id="submit"
+                      id="signInBtn"
                     >
                       Login
                     </button>
+                    <button
+                      onclick="return formValidation()"
+                     type="submit"
+                      value="submit"
+                      class="btn3"
+                      id="signUpBtn"
+                    >
+                     Register
+                    </button>
                   </div>
-                      <p>
+                      <p id="para-change">
                         Don't have an account?
                         <a href="#" class="register-link">Register here</a>
                       </p>
@@ -397,7 +413,29 @@
 
     <script src="main.js"></script>
     <script>
+     let signInBtn=document.getElementById("signInBtn");
+     let signUpBtn=document.getElementById("signUpBtn");
+     let nameField=document.getElementById("userNameField");
+     let Title=document.getElementById("title");
     
+     signInBtn.onclick=function(){
+      nameField.style.display='none'; 
+  
+       Title.innerHTML="Sign In"
+       signUpBtn.classList.add("disable")
+       signInBtn.classList.remove("disable")
+
+    }
+    signUpBtn.onclick=function(){
+      nameField.style.display='flex'; 
+      
+       Title.innerHTML="Sign Up"
+
+    }
+
+
+
+
       </script>
       
   </body>

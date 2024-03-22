@@ -167,15 +167,8 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
        
 }
-.toggle-btn,
-.close-btn {
-  display: block;
-  margin: 10px;
-  padding: 5px 10px;
-  background-color: #555;
-  color: #fff;
-  border: none;
-  cursor: pointer;
+#toggle-btn{
+    display: none;
 }
 .home-btn,.subscribe-btn{
     font-size: 16px;
@@ -189,29 +182,29 @@ body{
     transition: all .5s ease;
     border: none;
 }
-.nav-menu{
+/* .nav-menu{
     display: none;
-}
+} */
     
-.nav {
+/* .nav {
     display: block;
-  }
-  .nav.active {
+  } */
+  /* .nav.active {
     display: block;
-  }
+  } */
   
 .aside .nav{
     margin-top: 50px;
 
 }
-.nav-toggler{
+/* .nav-toggler{
     display: block;
-}
-.aside .nav li{
+} */
+/* .aside .nav li{
     margin-bottom: 20px;
     
     display: block;
-}
+} */
 .aside .nav li a{
     font-size: 16px;
     font-weight: 600;
@@ -431,7 +424,6 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-/* padding: 10px; */
 margin-bottom: 30px;
 border: 1px solid lightgray;
 box-shadow: 0.5rem 0.5rem 0.5rem rgb(223, 217, 217);
@@ -443,6 +435,7 @@ box-shadow: 0.5rem 0.5rem 0.5rem rgb(223, 217, 217);
     font-size: 16px;
     text-indent: 18px;
 }
+
 .icon-icon{
     font-size: 20px;
 }
@@ -464,7 +457,7 @@ box-shadow: 0.5rem 0.5rem 0.5rem rgb(223, 217, 217);
     justify-content: center;
     margin: 10px 10px;
 }
-#submit{
+#signInBtn{
      padding: 10px;
      background-color: red;
      color: white;
@@ -475,9 +468,33 @@ box-shadow: 0.5rem 0.5rem 0.5rem rgb(223, 217, 217);
      transition: 0.2s;
      font-size: 18px;
 }
-#submit:hover{
+#signUpBtn{
+    padding: 10px;
+    background-color: var(--text-black-900);
+    color:var(--bg-black-900);
+    font-weight: bold;
+    border: none;
+    border-radius: 7px;
+    width: 50%;
+    transition: 0.2s;
+    font-size: 18px;
+    margin-left: 30px;
+
+}
+#signInBtn:hover{
     transform: translateY(-0.1rem);
     background-color: rgb(236, 77, 77);
+}
+#signUpBtn:hover{
+   
+    transform: translateY(-0.1rem);
+    background-color: rgb(236, 77, 77);
+}
+.btn3{
+   background-color: #2482ca;
+}
+.btn3:hover{
+    transform: scale(1.2);
 }
 
 /* ================form========================== */
@@ -489,7 +506,7 @@ box-shadow: 0.5rem 0.5rem 0.5rem rgb(223, 217, 217);
 .passworderror, .passworderror1{
     width: 200px;
     box-shadow: 0 0.5rem  0.5rem rgb(247, 243, 243) ;
-    /* background-color: black; */
+  
     padding: 8px;
     z-index: 2;
 }
@@ -497,28 +514,7 @@ box-shadow: 0.5rem 0.5rem 0.5rem rgb(223, 217, 217);
 font-size:10px ;
 }
 
- /* ---------------registration disable......... */
 
- /* ........registration end........... */
-
-
- /* .btn3{
-    margin-left: 15px;
-    width: 90%;
-    height: 45px;
-    background-color: #162938;
-    border: none;
-    border-radius: 8px;
-    font-size: 1em;
-    color: white;
-    font-weight:5oo;
-    display: flex;
-    justify-content: center;
-    align-items: center;
- } */
-
-
- /* ------------contactformend----------- */
  footer{
     align-items: center;
     text-align: center;
@@ -531,7 +527,7 @@ font-size:10px ;
     #nav-links{
         margin-left: -270px;
         /* display: none; */
-      
+       
     }
     .main-content{
         padding-left: 0;
@@ -588,44 +584,45 @@ font-size:10px ;
         max-width:  100%;
 
     }
-    #close{
-        display: block;
-        position: relative;
-    }
+    
    
      .nav-toggler{
-        display: none;
+        display: flex;
         position: relative;
-        /* margin-left: -200px; */
      }
      #nav-links{
+        display: none;
         background-color: #16381c;
-        color: rgb(172, 161, 161);
-        
+        color: rgb(241, 231, 231);
+        position: fixed;
+        top: 0;
+        left: 270px;
+        padding: 20px 25px;
+        z-index: 1;
      }
-     #navigation{
-        background-color: #2482ca;
-     }
-     .active{
-        display: block;
-     }
+    
      #toggle-btn{
         display: flex;
         color: red;
-        position: absolute;
-        z-index: 100;
+        position: fixed;
+        z-index: 1;
+        left: 80%;
+        top: 0;
         box-shadow: 0 10px 8px transparent;
         background-color: #e8dfec;
         padding: 8px 8px;
         margin-top: 20px;
         flex-direction: column;
-        align-items: center; 
+        align-items: right; 
          justify-content: center;
-        font-size: 40px;
+        font-size: 30px;
     }
     .home .home-img{
         display: none;
     }
+    .active{
+        display: block;
+     }
 }
 @media (max-width:767px){
     .about .about-content .skills{
@@ -666,6 +663,10 @@ font-size:10px ;
     .row_blogs{
         display: block;
         text-align: justify;
+        column-gap: 20px;
     }
+    .active{
+        display: block;
+     }
   }
 
