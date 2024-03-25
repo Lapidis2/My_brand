@@ -16,13 +16,7 @@ backToHomeBtn.addEventListener('click', () => {
     window.location.href = 'index.html'; 
 });
 
-/// toggle menu
 
-// toggleBtn.onclick = () =>{
-
-
-//       }
-// }
 document.getElementById('close').addEventListener('click',function(){
     navLinks.style.display = 'none';
 })
@@ -34,5 +28,5 @@ toggleBtn.onclick = ()=>{
         navLinks.style.display = 'block';
 }}
 
-    // =============================local storage================================
+ 
 

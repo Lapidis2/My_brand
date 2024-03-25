@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login-page</title>
+    <title>register</title>
 </head>
 <link rel="stylesheet" href="login.css" />
 <link
@@ -41,43 +41,54 @@
       </div>
       
     </div>
-    
     <section id="login">
         
         <div>
-            <form id="loginForm">
-                <h2>Login</h2>
-                <span class="err">Invalid Email Address or Password!</span>
+            <form  id="registerForm">
+                <h2>Register</h2>
+                <span class="err">The user already Exists with such credentials!</span>
+                <div class="field-set">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Your Full Name">
+                </div>
                 <div class="field-set">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="loginEmail" placeholder="Email">
+                    <input type="email" name="email" id="email" placeholder="Email">
                 </div>
                 <div class="field-set">
                     <label for="password">Password</label>
-                    <input type="password" name="password" id="loginPassword" placeholder="Password">
-                    <a href="#">Forget Password?</a>
+                    <input type="password" name="password" id="password" placeholder="Password">
+                    <span class="span"></span>
                 </div>
-                <button type="submit" id="subBtn">Login</button>
+                <div class="field-set">
+                    <label for="cpassword">Confirm Password</label>
+                    <input type="password" id="cpassword" name="cpassword" placeholder="Confirm Password">
+                    <span class="cspan"></span>
+                </div>
+                <button type="submit" id="subBtn" >Sign up</button>
                 <div class="login-options">
-                    <h5 style="text-align: center;">Login By</h5>
+                    <h5 style="text-align: center;">Signup By</h5>
                     <div class="icons-options">
-                       <div class="google">
-                        <i class="ri-google-line"></i> Signin With Google
-                       </div>
+                        <div class="google">
+                            <i class="ri-google-line"></i> Signup With Google
+                        </div>
                         <div class="github">
-                            <i class="ri-github-fill"></i> Signin With Github
+                            <i class="ri-github-fill"></i> Signup With Github
                         </div>
                     </div>
-                    
+                
+                
+                </div>
                  
                 </div>
-                <p class="sign-up">Don’t have account? <a href="./register.html">Signup now</a></p>
-                <i></i>
+                
+                <p class="sign-up">Already have account? <a href="./login.html">login now</a></p>
             </form>
            
         </div>
-       
+        
+        
     </section>
-    <script src="login.js"></script>
+    <script src="Register.js"></script>
 </body>
 </html>

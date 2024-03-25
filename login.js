@@ -21,7 +21,7 @@ loginForm.addEventListener("submit", async (event) => {
             err.style.backgroundColor = "green";
             err.style.padding = '0.4rem';
             err.innerText = "Successful sign-in, You will be redirected to Dashboard!";
-            window.location.href = "https://lapidis2.github.io/My_brand/admin_panel/admin.html";
+            window.location.href = "admin_panel/admin.html";
         } else {
             // Handle invalid credentials
             err.style.display = "block";
