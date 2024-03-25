@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./blogs.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  
+    <script src="../blogs.html" defer></script>
+  
+
+    <title>Blogs - Home</title>
+  </head>
+  <body>
+      <main>
+        <div class="blog__container">
+          <header>
+            <h1>Blog Management</h1>
+          </header>
+          <ul class="blog__list"></ul>
+          <div class="new-blog__form">
+            <span id="notify_msg">Blog Added Successful</span>
+            <form action="post" id="newBlogForm">
+              <input type="text" name="title" placeholder="Title" required />
+              <input type="file" name="image" accept="image/*" />
+              <textarea
+                name="description"
+                placeholder="Description"
+                required
+              ></textarea>
+              
+             
+              <button type="submit" id="createBtn">Create Blog</button>
+            </form>
+          </div>
+        </div>
+      </main>
+  
+    <script src="Blogs.js"></script>
+  </body>
+</html>

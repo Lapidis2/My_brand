@@ -52,11 +52,14 @@ body{
     color:red;
 }
 .main{
-    margin-left: 220px;
+    margin-left: 270px;
     padding: 52px;
 }
 .main h2{
     margin-top: 20px;
+}
+.home__container{
+    margin-left: 270px;
 }
 .blog-header{
     display: flex;
@@ -69,4 +72,8 @@ body{
     border-radius: 20px;
     width: 90px;
     height: 20px;
+}
+/* --------------main--------------------- */
+.hone-content{
+    margin-left: -270px;
 }

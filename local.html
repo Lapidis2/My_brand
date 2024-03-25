@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account </title>
+    <style>
+        form {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            max-width: 400px;
+            justify-content: center;
+            align-items: center;
+        }
+        input {
+            border: 2px solid #000;
+            padding: .4rem;
+            font-size: 18px;
+            border-radius: 1px;
+        }
+        button {
+            background-color: gold;
+            border: none;
+            padding: .6rem;
+            width: 100px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form">
+        <form id="registrationForm" onsubmit="return validateForm()">
+            <h2>Registration Form</h2>
+            <p id="notify">Notification</p>
+            <input type="text" id="name" placeholder="Name">
+            <input type="email" id="email" placeholder="Your Email">
+            <input type="password" id="password" placeholder="Password">
+            <input type="password" id="confirmpassword" placeholder="Confirm Password">
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <script>
+        function validateForm() {
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let password = document.getElementById('password').value;
+            let confirmPassword = document.getElementById('confirmpassword').value;
+            
+            if (password !== confirmPassword) {
+                alert('Passwords must match');
+                return false; // Prevent form submission
+            }
+            
+            let allUsers = JSON.parse(localStorage.getItem('Users')) || [];
+            let newUser = { name, email, password };
+            allUsers.push(newUser);
+            localStorage.setItem('Users', JSON.stringify(allUsers));
+            
+            alert("User created");
+            return true; // Allow form submission
+        }
+    </script>
+</body>
+</html>

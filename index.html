@@ -34,14 +34,17 @@
                 <a href="#about"> <i class="fa-solid fa-address-card"></i>About</a>
             </li>
             <li>
-                <a href="#articles"> <i class="fa-solid fa-blog"></i>article</a>
+                <a href="Admin_panel/admin.html"> <i class="fa-solid fa-blog"></i>article</a>
             </li>
             <li>
-                <a href="#skills"> <i class="fa-solid fa-book"></i>Projects</a>
+                <a href="Admin_panel/admin.html"> <i class="fa-solid fa-book"></i>Projects</a>
             </li>
             <li>
                 <a href="#contact"><i class="fa-solid fa-address-book"></i>Contact</a>
             </li>
+            <li>
+              <a href="/local.html"></i>Login</a>
+          </li>
         </ul>
       </div>
       
@@ -291,6 +294,7 @@
           </div>
         </section>
         <!-- ................BLOGS section end  ..........-->
+    
 
         <!-- ................contact section end  ..........-->
         <section id="contact" class="contact section">
@@ -332,7 +336,7 @@
                         <span class="icon-icon"
                           ><i class="fa-regular fa-user"></i
                         ></span>
-                        <input type="text" id="user_name" placeholder="Enter UserName" name="userName" autocomplete="true" />
+                        <input type="text" id="name" placeholder="Enter UserName" name="userName" autocomplete="true" />
                       </div>
                     <div class="input-box">
                       <span class="icon-icon"
@@ -349,6 +353,7 @@
                       <input type="password" id="psswd" placeholder="Enter Password" name="psswd" required autocomplete="true" />
                       <div class="passworderror" id="psswd_error"></div>
                     </div>
+                    
                     <div class="remember-forget">
                      <input type="checkbox" id="checkbox" /> <label for="checkbox">Remember Me</label> 
                       <a href="#" id="forget-password" >Forget password?</a>
@@ -365,7 +370,7 @@
                       Login
                     </button>
                     <button
-                      onclick="return formValidation()"
+                      onclick="return login()"
                      type="submit"
                       value="submit"
                       class="btn3"
@@ -432,11 +437,8 @@
        Title.innerHTML="Sign Up"
 
     }
-
-
-
-
-      </script>
-      
+</script>
+      <script src="./validateform.js"></script>
+      <script src="./validateinput.js"></script>
   </body>
 </html>
