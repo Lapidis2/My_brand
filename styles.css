@@ -146,8 +146,7 @@ body{
     border-right: 1px solid var(--bg-black-100);
     display: flex; 
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  
 }
 .aside .logo{
     position: relative;
@@ -527,6 +526,7 @@ font-size:10px ;
     #nav-links{
         margin-left: -270px;
         /* display: none; */
+        margin-top: 0;
        
     }
     .main-content{

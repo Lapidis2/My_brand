@@ -9,7 +9,7 @@
       rel="stylesheet"
     />
   
-    <script src="../blogs.html" defer></script>
+    <script src="./blogs.html" defer></script>
   
 
     <title>Blogs - Home</title>
@@ -25,7 +25,7 @@
             <span id="notify_msg">Blog Added Successful</span>
             <form action="post" id="newBlogForm">
               <input type="text" name="title" placeholder="Title" required />
-              <input type="file" name="image" accept="image/*" />
+              <input type="file" name="image" accept="image/*" placeholder="file"/>
               <textarea
                 name="description"
                 placeholder="Description"
@@ -34,11 +34,18 @@
               
              
               <button type="submit" id="createBtn">Create Blog</button>
+              <button onclick="goBack()" id="backBtn" style="background-color: green;">Go Back</button>
             </form>
           </div>
         </div>
       </main>
-  
-    <script src="Blogs.js"></script>
+
+  <script>
+     function goBack(){
+      return window.history.back();
+
+     }
+  </script>
+    <script src="./blogs.js"></script>
   </body>
 </html>
