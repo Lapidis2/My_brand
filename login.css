@@ -111,3 +111,7 @@ body{
     align-items: center;
     justify-content: center;
 }
+#loginEmail{
+    height: 20px;
+    width: 80%;
+}

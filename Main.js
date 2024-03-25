@@ -6,10 +6,7 @@ const close = document.getElementById('close');
 const toggleBtn = document.getElementById('toggle-btn');
 const backToHomeBtn = document.getElementById('backToHomeBtn');
 
-registerLink.addEventListener('click',(event)=>{
-    wrapper.classList.add('current');
-    event.preventDefault();
-});
+
 
 backToHomeBtn.addEventListener('click', () => {
     // Redirect to home page 

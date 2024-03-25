@@ -168,4 +168,5 @@ function saveBlogsToLocalStorage() {
     const latestBlogs = blogs.slice(-MAX_BLOGS); // Keep only the latest MAX_BLOGS blogs
     localStorage.setItem('blogs', JSON.stringify(latestBlogs));
 }
+localStorage.clear();
 // =============================resizing image input===============================

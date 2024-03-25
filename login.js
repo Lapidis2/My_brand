@@ -1,41 +1,26 @@
-const loginPassword = document.getElementById("loginPassword");
-const loginEmail = document.getElementById("loginEmail");
-const loginForm = document.getElementById("loginForm");
-const err = document.querySelector(".err");
-const subBtn = document.getElementById('subBtn');
-let users = JSON.parse(localStorage.getItem("Users")) || [];
+document.addEventListener("DOMContentLoaded", function() {
+    const loginForm = document.getElementById("loginForm");
+    const loginEmail = document.getElementById("loginEmail");
+    const loginPassword = document.getElementById("loginPassword");
+    const err = document.querySelector(".err");
 
-loginForm.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    let email = loginEmail.value.trim();
-    let password = loginPassword.value.trim();
-    subBtn.classList.toggle('disabled');
-    subBtn.innerText = "Loading...";
-    subBtn.disabled = true;
+    loginForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        
+        // Reset error message
+        err.style.display = "none";
 
-    try {
-        // Check if email and password match the admin credentials
-        if (email === "hitapeter2@gmail.com" && password === "Hitayezu@1") {
-            // Redirect to admin panel
+        // Get email and password values
+        const email = loginEmail.value.trim();
+        const password = loginPassword.value.trim();
+
+        // Validate email and password
+        if (email === "" || password === "") {
+            err.textContent = "Email and password are required.";
             err.style.display = "block";
-            err.style.backgroundColor = "green";
-            err.style.padding = '0.4rem';
-            err.innerText = "Successful sign-in, You will be redirected to Dashboard!";
-            window.location.href = "admin_panel/admin.html";
-        } else {
-            // Handle invalid credentials
-            err.style.display = "block";
-            err.innerText = "Invalid username or password.";
+            return; // Stop further execution
         }
-    } catch (error) {
-        console.log(error);
-        err.style.display = "block";
-        err.innerText = "Error signing in. Please try again later.";
-    }
 
-    setTimeout(() => {
-        subBtn.classList.toggle('disabled');
-        subBtn.innerText = 'Sign in';
-        subBtn.disabled = false;
-    }, 2000);
+    
+    });
 });
