@@ -111,7 +111,53 @@ body{
     align-items: center;
     justify-content: center;
 }
-#loginEmail{
-    height: 20px;
-    width: 80%;
+form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    width: 300px;
+    
 }
+form div{
+    display: flex;
+    flex-direction: column;
+    /* row-gap: 5px; */
+}
+form label{
+    font-weight: 500;
+    font-size:14px;
+}
+form input, form textarea{
+    background-color:var(--box-color);
+    border: none;
+    padding: .5rem;
+    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+}
+form input:focus{
+   color: #000;
+   font-weight: 520;
+  
+}
+
+form textarea{
+    height: 80px;
+    resize: none;
+}
+form button{
+    width: 30%;
+    border: none;
+    background-color: var(--primary-color);
+    color:var(--secondary-color);
+    border-radius: 5px;
+    padding: .4rem;
+    cursor: pointer;
+    margin: .6rem .7rem;
+    transition: all 0.2s;
+
+}
+
+
+
+
+
