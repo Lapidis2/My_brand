@@ -14,8 +14,6 @@
         margin-bottom: 5px;
         width: 90%;
         font-size: 16px;
-       
-       
         text-indent: 18px;     
     }
     #userNameField{
@@ -58,4 +56,3 @@
         transform: translateY(-0.1rem);
         background-color: rgb(236, 77, 77);
     }
-

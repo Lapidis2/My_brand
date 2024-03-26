@@ -161,7 +161,7 @@ if (blogs.length > 0) {
     nextBlogId = Math.max(...blogs.map(blog => blog.id)) + 1;
 }
 
-const MAX_BLOGS = 100; // Maximum number of blogs to store in local storage
+const MAX_BLOGS = 100;
 
 // Function to save the blogs array to local storage, keeping only the latest MAX_BLOGS blogs
 function saveBlogsToLocalStorage() {
