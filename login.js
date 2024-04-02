@@ -30,13 +30,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (!user) {
             // Check if the entered email matches the admin credentials
-            if (email === adminCredentials.email && password === adminCredentials.password) {
+            if (email === 'hitapeter2@gmail.com' && password ==='Hitayezu@1') {
                 // Admin login successful, redirect to admin panel
                 window.location.href = "Admin_panel/admin.html";
             } else {
                 // Display error message for non-existing email
-                err.textContent = "Email not found. Please register first or use admin credentials.";
+                err.textContent = "Email or Password not found. Please register first or use admin credentials.";
                 err.style.display = "block";
+                err.style.color='red'
             }
             return; // Stop further execution
         }
@@ -46,10 +47,11 @@ document.addEventListener("DOMContentLoaded", function() {
             // Display error message for incorrect password
             err.textContent = "Incorrect password. Please try again.";
             err.style.display = "block";
+            err.style.color='red'
             return; // Stop further execution
         }
 
         // If email and password are valid for a user, redirect to user dashboard
-        window.location.href = "user_dashboard.html"; // Replace with the URL of the user dashboard page
+        window.location.href = "Admin_panel/admin.html"; 
     });
 });

@@ -1,9 +1,9 @@
 const form = document.getElementById("newBlogForm");
 let blogContainer = document.querySelector(".blog__list");
 let blogs = [];
-let nextBlogId = 1; // Initialize ID counter
+let nextBlogId = 1; 
 const createBtn = document.getElementById('createBtn');
-const notifyMsg = document.getElementById('notify_msg'); // Add this line to get the notification message element
+const notifyMsg = document.getElementById('notify_msg'); 
 
 window.addEventListener("DOMContentLoaded", async () => {
     await renderBlogs(); // Render existing blogs on page load
@@ -23,19 +23,13 @@ window.addEventListener("DOMContentLoaded", async () => {
             reader.readAsDataURL(image);
             reader.onload = function() {
                 const imageDataURL = reader.result;
-
-                // Create new blog object with an ID
                 const newBlog = {
                     id: nextBlogId++, // Assign ID and increment counter for next blog
                     title: title,
                     description: description,
                     image: imageDataURL // Store image data URL instead of file object
                 };
-
-                // Add new blog to blogs array
                 blogs.push(newBlog);
-
-                // Save the blogs array to local storage
                 saveBlogsToLocalStorage();
 
                 // Render blogs including the new one

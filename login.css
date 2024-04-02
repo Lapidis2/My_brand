@@ -163,6 +163,10 @@ button {
     border: 1px solid #ccc;
     box-sizing: border-box;
   }
+  button:hover{
+    transition: 1s;
+    border-radius: 30px;
+  }
 .sign-up a{
     font-weight: 600;
     color:blue;
