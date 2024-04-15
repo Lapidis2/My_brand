@@ -1,12 +1,48 @@
 const form = document.getElementById("newBlogForm");
 let blogContainer = document.querySelector(".blog__list");
 let blogs = [];
+let blogsData = [];
 let nextBlogId = 1; 
 const createBtn = document.getElementById('createBtn');
 const notifyMsg = document.getElementById('notify_msg'); 
 
+
+
+window.onload = async function() {
+    try {
+      const response = await fetch('http://localhost:5000/blogs');
+      if (!response.ok) {
+        throw new Error('Failed to fetch blogs');
+      }
+      const blogsArr = await response.json();
+
+      const blogsData = blogsArr.blogs;
+      const blogList = document.querySelector('.blog__list');
+      blogList.innerHTML = ''; // Clear previous list items
+
+      blogsData.forEach(blog => {
+        const div = document.createElement('div');
+        div.innerHTML = `
+          <h2 class='blo-title'>${blog.title}</h2>
+          <p class='blog-desc'>${blog.description}</p>
+          <img src ='https://source.unsplash.com/80x80/'>
+        `;
+        blogList.appendChild(div);
+      });
+
+      console.log(blogsArr);
+    } catch (error) {
+      console.error('Error fetching blogs:', error.message);
+    }
+};
+
+
+ 
+
+  
+  
 window.addEventListener("DOMContentLoaded", async () => {
-    await renderBlogs(); // Render existing blogs on page load
+    await renderBlogs(); 
 
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
@@ -51,34 +87,26 @@ window.addEventListener("DOMContentLoaded", async () => {
     });
 });
 
+
+
+
 async function renderBlogs() {
     blogContainer.innerHTML = '';
     blogs.forEach((blog, index) => {
-        // Create a container for the blog item
         const blogItem = document.createElement('li');
         blogItem.classList.add('blog__item');
-
-        // Create the title element
         const titleElement = document.createElement('div');
         titleElement.classList.add('blog__title');
         titleElement.textContent = blog.title;
-
-        // Create the description element
         const descriptionElement = document.createElement('div');
         descriptionElement.classList.add('blog__description');
         descriptionElement.textContent = blog.description;
-
-        // Create the image container
         const imageContainer = document.createElement('div');
         imageContainer.classList.add('blog__image');
-
-        // Create the image element
         const imgElement = document.createElement('img');
-        imgElement.src = blog.image; // Set the source to the image data URL
+        imgElement.src = blog.image; 
         imgElement.alt = 'Blog Image';
-        imgElement.classList.add('blog-image'); // Add a class for styling
-
-        // Append elements to the image container
+        imgElement.classList.add('blog-image');
         imageContainer.appendChild(imgElement);
 
         // Create the actions container
@@ -157,10 +185,9 @@ if (blogs.length > 0) {
 
 const MAX_BLOGS = 100;
 
-// Function to save the blogs array to local storage, keeping only the latest MAX_BLOGS blogs
 function saveBlogsToLocalStorage() {
-    const latestBlogs = blogs.slice(-MAX_BLOGS); // Keep only the latest MAX_BLOGS blogs
+    const latestBlogs = blogs.slice(-MAX_BLOGS); 
     localStorage.setItem('blogs', JSON.stringify(latestBlogs));
 }
 localStorage.clear();
-// =============================resizing image input===============================
+

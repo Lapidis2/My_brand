@@ -15,29 +15,24 @@
     <title>Blogs - Home</title>
   </head>
   <body>
-      <main>
-        <div class="blog__container">
-          <header>
-            <h1>Blog Management</h1>
-          </header>
-          <ul class="blog__list"></ul>
-          <div class="new-blog__form">
-            <span id="notify_msg">Blog Added Successful</span>
-            <form action="post" id="newBlogForm">
-              <input type="text" name="title" placeholder="Title" required />
-              <input type="file" name="image" accept="image/*" placeholder="file"/>
-              <textarea
-                name="description"
-                placeholder="Description"
-                required></textarea>
-              
-             
-              <button type="submit" id="createBtn">Create Blog</button>
-              <button onclick="goBack()" id="backBtn" style="background-color: green;">Go Back</button>
-            </form>
-          </div>
+    <main>
+      <div class="blog__container">
+        <header>
+          <h1>Blog Management</h1>
+        </header>
+        <ul class="blog__list"></ul>
+        <div class="new-blog__form">
+          <span id="notify_msg">Blog Added Successfully</span>
+          <form action="post" id="newBlogForm">
+            <input type="text" name="title" placeholder="Title" required />
+            <input type="file" name="image" accept="image/*" placeholder="file" />
+            <textarea name="description" placeholder="Description" required></textarea>
+            <button type="submit" id="createBtn">Create Blog</button>
+            <button onclick="goBack()" id="backBtn" style="background-color: green;">Go Back</button>
+          </form>
         </div>
-      </main>
+      </div>
+    </main>
 
   <script>
      function goBack(){
