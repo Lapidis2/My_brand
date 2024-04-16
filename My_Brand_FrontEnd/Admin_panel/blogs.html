@@ -15,23 +15,52 @@
     <title>Blogs - Home</title>
   </head>
   <body>
+    <!-- new blog -->
     <main>
-      <div class="blog__container">
-        <header>
-          <h1>Blog Management</h1>
-        </header>
-        <ul class="blog__list"></ul>
+      <header style="text-align: center;">
+        <h1>Blog Management</h1>
+      </header>
+      <div class="blog__list"></div>
+        <div id="myModal">
+        <span class="close">&times;</span>
+        <div class="blog__list"></div>
         <div class="new-blog__form">
           <span id="notify_msg">Blog Added Successfully</span>
+          
           <form action="post" id="newBlogForm">
-            <input type="text" name="title" placeholder="Title" required />
-            <input type="file" name="image" accept="image/*" placeholder="file" />
-            <textarea name="description" placeholder="Description" required></textarea>
+            <input type="text" name="title" placeholder="Title"  id="blogtitle"required />
+            <input type="file" name="image" accept="image/*" placeholder="file"  id="blogimage"/>
+            <textarea name="description" placeholder="Description" id="blogdesc" required></textarea >
             <button type="submit" id="createBtn">Create Blog</button>
             <button onclick="goBack()" id="backBtn" style="background-color: green;">Go Back</button>
           </form>
         </div>
       </div>
+
+ <!-- update blog form -->
+ <div id="updateBlogModel" class="modal">
+  <div class="modal-content">
+    <h3>Update this blog</h3>
+    <span class="closeUpdateBlogModel">&times;</span>
+    <form enctype="multipart/form-data" id="updateBlogForm">
+      <label for="updateImage">Image Upload :</label>
+      <input type="file" id="updatedBlogImage" name="updatedBlogImage" accept="image/jpeg, image/png">
+
+      <label for="updateTitle">Title:</label>
+      <input type="text" id="updateTitle" name="updateTitle" required>
+
+      <label for="updateContent">New Content:</label>
+      <textarea id="updateContent" name="updateContent" rows="6" required></textarea>
+
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</div>
+
+
+
+
     </main>
 
   <script>
